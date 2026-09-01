@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Para hoy ✨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#faf8f5] text-stone-800 min-h-screen flex flex-col justify-between p-4 sm:p-6 antialiased selection:bg-stone-200">
+
+  <main class="max-w-sm sm:max-w-md mx-auto w-full my-auto space-y-4">
+    
+    <!-- Tarjeta Principal -->
+    <div class="bg-white p-5 sm:p-7 rounded-3xl shadow-sm border border-stone-200/70 space-y-5">
+      
+      <!-- FOTO PRINCIPAL (daifashion) -->
+      <div class="overflow-hidden rounded-2xl border border-stone-100 shadow-sm bg-stone-100">
+        <img 
+          src="img/daifashion.jpg" 
+          alt="Foto principal" 
+          class="w-full h-56 sm:h-64 object-cover object-center transition-transform duration-300"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Encabezado -->
+      <div class="space-y-1">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-stone-400">
+          01 / Recordatorio para hoy
+        </span>
+        <h1 class="text-xl sm:text-2xl font-bold text-stone-900 leading-tight">
+          Respira hondo, ya hiciste la parte más difícil.
+        </h1>
+      </div>
+
+      <!-- Mensaje sincero -->
+      <div class="space-y-3 text-stone-600 text-sm leading-relaxed">
+        <p>
+          Sé que las revisiones y el papeleo de la universidad generan nervios, pero hoy solo vas a validar lo que ya te ganaste con años de esfuerzo, materias aprobadas y dedicación.
+        </p>
+        <p>
+          Entra con calma y toda la seguridad del mundo. Pase lo que pase con los trámites o tiempos de la U, <strong>estoy sumamente orgulloso de ti</strong>.
+        </p>
+      </div>
+
+      <!-- GALERÍA SECUNDARIA (daifashion2 y daifashion3) -->
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <div class="overflow-hidden rounded-xl border border-stone-100 bg-stone-100 h-28 sm:h-32">
+          <img 
+            src="img/daifashion2.jpg" 
+            alt="Recuerdo 1" 
+            class="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+        <div class="overflow-hidden rounded-xl border border-stone-100 bg-stone-100 h-28 sm:h-32">
+          <img 
+            src="img/daifashion3.jpg" 
+            alt="Recuerdo 2" 
+            class="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- SECCIÓN DEL POSTRE / ANTOJO -->
+      <div class="pt-4 border-t border-stone-100 space-y-3">
+        <div>
+          <label for="rewardInput" class="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+            🍰 ¿Con qué postre / antojo cerramos el día?
+          </label>
+          <p class="text-[11px] text-stone-400 mt-0.5">
+            Al salir de la U vamos directo por él.
+          </p>
+        </div>
+        
+        <form id="rewardForm" class="space-y-2">
+          <input 
+            type="text" 
+            id="rewardInput" 
+            placeholder="Ej. Helado, crepas, marquesa..." 
+            required
+            class="w-full px-3.5 py-3 text-sm rounded-xl border border-stone-200 bg-stone-50/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-stone-400/20 focus:border-stone-500 transition-all placeholder:text-stone-400"
+          />
+          <button 
+            type="submit" 
+            class="w-full py-3 rounded-xl bg-stone-900 hover:bg-stone-800 active:scale-[0.98] text-white text-xs font-semibold tracking-wide transition-all shadow-sm flex items-center justify-center gap-2"
+          >
+            <span>Confirmar antojo</span>
+            <span>→</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-xs text-stone-400 font-medium pb-2">
+      Te espero al salir ❤️
+    </p>
+
+  </main>
+
+  <script>
+    // Coloca aquí tu número con código de país sin espacios ni símbolos (ej. 507XXXXXXXX)
+    const TU_TELEFONO = "TU_NUMERO_AQUI"; 
+
+    document.getElementById('rewardForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const reward = document.getElementById('rewardInput').value.trim();
+      if (!reward) return;
+
+      // Lanzar confeti en el móvil
+      confetti({
+        particleCount: 65,
+        spread: 60,
+        origin: { y: 0.75 }
+      });
+
+      // Redirección directa a WhatsApp
+      setTimeout(() => {
+        const msg = encodeURIComponent(`¡Listo! Ya salí de la revisión ✨ Mi antojo para hoy es: ${reward}`);
+        window.location.href = `https://wa.me/${TU_TELEFONO}?text=${msg}`;
+      }, 600);
+    });
+  </script>
+</body>
+</html>
