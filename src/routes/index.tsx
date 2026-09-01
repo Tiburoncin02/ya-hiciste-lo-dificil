@@ -24,7 +24,7 @@ const METRICS = [
     value: '100%',
     label: 'De la meta cumplida',
     detail:
-      'De la meta cumplida con la universidad, cumplida con tus padres y, más importante, cumplida al 100% con la promesa que te hiciste a ti misma.',
+      'De la meta cumplida de la Universidad, cumplida con tus padres y mas importante cumplida el 100% de la meta que te prometiste a ti misma.',
   },
 ]
 
@@ -69,8 +69,7 @@ function Landing() {
 
             <Reveal delay={220}>
               <p className="hero-lead">
-                Hola amor, este es un mensaje de mí para ti. Quiero recordarte el recorrido
-                extraordinario que ya hiciste.
+                Hola amor este es un mensaje de mi para ti, quiero recordarte el recorrido extraordinario que ya hiciste.
               </p>
             </Reveal>
 
@@ -78,8 +77,7 @@ function Landing() {
               <div className="hero-note glass-panel">
                 <span className="note-number">01</span>
                 <p>
-                  Quiero que hoy entres a la universidad con calma. Es un gran día y tienes todo un
-                  futuro por estrenar.
+                  Quiero que hoy entres a la Universidad con calma, es un gran dia y un futuro por estrenar.
                 </p>
               </div>
             </Reveal>
@@ -198,7 +196,7 @@ function Landing() {
                 <Check size={18} aria-hidden="true" />
                 <p>
                   Una revisión académica es el reflejo de tus esfuerzos. No mide tu inteligencia, tu
-                  talento ni tu futuro profesional. Entra con la frente en alto: la victoria ya es
+                  talento ni tu futuro profesional, entra con la frente en alto la victoria ya es
                   tuya.
                 </p>
               </div>
@@ -235,7 +233,7 @@ function Landing() {
             <p className="eyebrow centered">La recompensa</p>
             <h2>¿Con qué celebramos tu victoria sobre la universidad?</h2>
             <p className="celebration-intro">
-              Elige el primer antojo que te haga sonreír, porque verte sonreír no tiene precio.
+              Elige el primer antojo que te haga sonreír, porque verte sonreir no tiene precio.
             </p>
           </Reveal>
 
@@ -291,3 +289,5 @@ function Landing() {
     </main>
   )
 }
+
+export default Landing
