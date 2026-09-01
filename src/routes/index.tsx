@@ -283,7 +283,7 @@ function Landing() {
       </section>
 
       <footer>
-        <span>Para ti, siempre</span>
+        <span>De tu negrito con mucho</span>
         <Heart size={13} fill="currentColor" aria-hidden="true" />
       </footer>
     </main>
